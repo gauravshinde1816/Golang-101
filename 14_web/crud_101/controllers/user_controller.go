@@ -81,9 +81,5 @@ func GetAllUsers(c echo.Context) error {
 		users = append(users, user)
 	}
 
-	if err != nil {
-		return c.JSON(http.StatusInternalServerError, responses.UserResponse{Status: http.StatusInternalServerError, Message: "error", Data: &echo.Map{"data": err.Error()}})
-	}
-
 	return c.JSON(http.StatusOK, responses.UserResponse{Status: http.StatusOK, Message: "success", Data: &echo.Map{"data": users}})
 }

@@ -17,6 +17,7 @@ func main() {
 
 	// routes
 	routes.UserRoutes(e)
+	routes.ProductRoutes(e)
 
 	e.GET("/", func(c echo.Context) error {
 		return c.JSON(200, &echo.Map{"data": "Hello from Echo and MongoDB"})
